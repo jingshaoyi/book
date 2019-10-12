@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.HtmlUtils;
 
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.util.Random;
@@ -21,9 +22,10 @@ public class LoginController {
     @Autowired
     UserService userService;
 
+    //登陆验证
     @PostMapping(value = "/api/login")
     @ResponseBody
-    public Result login(@RequestBody User requestUser) {
+    public Result login(@RequestBody User requestUser, HttpSession session) {
         String username = requestUser.getUsername();
         username = HtmlUtils.htmlEscape(username);
         User user = userService.get(username, requestUser.getPassword());
@@ -34,10 +36,11 @@ public class LoginController {
             System.out.println("-----------------------------------------------");
             System.out.println(requestUser.getUsername() + ",登陆成功");
             System.out.println("-----------------------------------------------");
+            session.setAttribute("user", user);
             return new Result(200);
         }
     }
-
+    //生成6位随机码数
     public String getRandomString(int length) {
         String base = "abcdefghijklmnopqrstuvwxyz0123456789";
         Random random = new Random();
@@ -49,6 +52,7 @@ public class LoginController {
         return sb.toString();
     }
 
+    //上传图片保存地址
     @PostMapping("api/covers")
     @ResponseBody
     public String coversUpload(MultipartFile file) throws Exception {
