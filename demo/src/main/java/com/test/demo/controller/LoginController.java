@@ -10,19 +10,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.util.HtmlUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Random;
-
+@CrossOrigin
 @Controller
 public class LoginController {
     @Autowired
     UserService userService;
 
-    @CrossOrigin
     @PostMapping(value = "/api/login")
     @ResponseBody
     public Result login(@RequestBody User requestUser) {
@@ -51,7 +49,6 @@ public class LoginController {
         return sb.toString();
     }
 
-    @CrossOrigin
     @PostMapping("api/covers")
     @ResponseBody
     public String coversUpload(MultipartFile file) throws Exception {

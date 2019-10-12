@@ -7,30 +7,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin
 @RestController
 public class LibraryController {
     @Autowired
     BookService bookService;
 
-    @CrossOrigin
+
     @GetMapping("/api/books")
     @ResponseBody
     public List<Book> list() throws Exception {
         return bookService.list();
     }
-    @CrossOrigin
     @PostMapping("/api/books")
     public Book addOrUpdate(@RequestBody Book book) throws Exception {
         bookService.addOrUpdate(book);
         return book;
     }
-    @CrossOrigin
     @PostMapping("/api/delete")
     public void delete(@RequestBody Book book) throws Exception {
         bookService.deleteById(book.getId());
     }
-    @CrossOrigin
     @GetMapping("/api/categories/{cid}/books")
     @ResponseBody
     public List<Book> listByCategory(@PathVariable("cid") int cid) throws Exception {
@@ -40,7 +37,6 @@ public class LibraryController {
             return list();
         }
     }
-    @CrossOrigin
     @PostMapping("/api/search")
     public List<Book> searchResult(@RequestBody Search s) throws Exception {
         // 关键字为空时查询所有书籍
