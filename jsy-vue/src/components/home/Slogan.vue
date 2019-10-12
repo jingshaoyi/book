@@ -5,7 +5,7 @@
     </div>
   <div class="box-card">
       <div style="font-size: 45px;color: azure;white-space: nowrap">Talk is nothing, show you my code.</div>
-      <a href="https://github.com/jingshaoyi/books.git" target="_blank">
+      <a href="https://github.com/jingshaoyi/book.git" target="_blank">
         <img src="../../assets/img/icon/icon6.png" alt="" class="git-link">
       </a>
       <a href="https://www.csdn.net/" target="_blank">

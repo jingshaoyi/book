@@ -50,7 +50,8 @@
           })
           .catch(failResponse => {
           })
-      }
+      },
+
     }
   }
 </script>
