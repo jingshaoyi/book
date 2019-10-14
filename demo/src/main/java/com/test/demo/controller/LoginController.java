@@ -64,7 +64,7 @@ public class LoginController {
             f.getParentFile().mkdirs();
         try {
             file.transferTo(f);
-            String imgURL = "http://localhost:8443/api/file/" + f.getName();
+            String imgURL = "http://39.106.72.251:8443/api/file/" + f.getName();
             return imgURL;
         } catch (IOException e) {
             e.printStackTrace();
