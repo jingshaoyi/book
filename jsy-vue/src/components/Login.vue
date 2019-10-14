@@ -23,8 +23,7 @@
     name: 'Login',
     data () {
       return {
-        rules: {
-        },
+        rules: {},
         checked: true,
         loginForm: {
           username: 'admin',
