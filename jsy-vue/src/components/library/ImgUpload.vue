@@ -3,7 +3,7 @@
   <el-upload
     class="img-upload"
     ref="upload"
-    action="http://localhost:8443/api/covers"
+    action="http://39.106.72.251:8443/api/covers"
     :on-preview="handlePreview"
     :on-remove="handleRemove"
     :before-remove="beforeRemove"
