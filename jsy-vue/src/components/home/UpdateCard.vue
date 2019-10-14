@@ -6,6 +6,12 @@
     </div>
     <div class="block">
       <el-timeline>
+        <el-timeline-item timestamp="2019/10/14" placement="top">
+          <el-card>
+            <h4>前后端分离,完成服务器项目部署<br><br>完成图片上传服务器部署</h4>
+            <p>jingshaoyi 提交于 2019/10/14 11:02</p>
+          </el-card>
+        </el-timeline-item>
         <el-timeline-item timestamp="2019/10/13" placement="top">
           <el-card>
             <h4>实现图书分类功能</h4>
@@ -45,7 +51,7 @@
   .box-card {
     margin-top: 5px;
     width: 988px;
-    height: 850px;
+    height: 1000px;
     text-align: left;
   }
 </style>
