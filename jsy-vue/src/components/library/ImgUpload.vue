@@ -2,7 +2,7 @@
   <el-upload
     class="img-upload"
     ref="upload"
-    action="http://localhost:8443/api/covers"
+    action="http://localhost:8443/api/covers"/>//图片上传地址服务器地址
     :on-preview="handlePreview"
     :on-remove="handleRemove"
     :before-remove="beforeRemove"
