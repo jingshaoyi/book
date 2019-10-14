@@ -1,5 +1,5 @@
 <template>
-  //action：图片上传地址服务器地址
+  <!--action : 图片上传地址服务器地址-->
   <el-upload
     class="img-upload"
     ref="upload"
