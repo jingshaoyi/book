@@ -14,6 +14,9 @@
     <el-form-item style="width: 100%">
       <el-button type="primary" style="width: 100%;background: #505458;border: none" v-on:click="login">登录</el-button>
     </el-form-item>
+    <el-form-item style="width: 100%">
+      <el-button type="primary" style="width: 100%;background: #505458;border: none" v-on:click="qqLoginClick('qq')">QQ第三方登录</el-button>
+    </el-form-item>
   </el-form>
   </body>
 </template>
@@ -53,13 +56,20 @@
           .catch(failResponse => {
           })
       },
-
+      // QQ 第三方登录
+      qqLoginClick(value) {
+        // 直接弹出授权页面，授权过后跳转到回调页面进行登录处理
+        QC.Login.showPopup({
+          appId:"101810520",
+          redirectURI:"http://localhost/index"  //登录成功后会自动跳往该地址
+        });
+      }
     }
   }
 </script>
 <style>
   #poster {
-    background:url("../assets/backimg.jpg") no-repeat;
+    background:url("../assets/denglubg.png") no-repeat;
     height: 100%;
     width: 100%;
     background-size: auto;
